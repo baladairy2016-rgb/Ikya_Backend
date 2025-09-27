@@ -12,13 +12,14 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${app.upload.dir:uploads/}")
     private String uploadDir;
 
-    @Override
+   @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE")
-                .allowedHeaders("*");
-    }
+    registry.addMapping("/**")
+            .allowedOrigins("https://ikya-frontend9.onrender.com")  // Your frontend URL
+            .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE")
+            .allowedHeaders("*");
+}
+
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
